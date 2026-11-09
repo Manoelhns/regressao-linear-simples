@@ -4,14 +4,30 @@ Projeto de Machine Learning que usa **Regressão Linear Simples** para prever a 
 
 > 🚧 Projeto em desenvolvimento, parte dos meus estudos de Machine Learning.
 
+## 💡 Contexto
+
+Uma plataforma online de educação quer entender se **a quantidade de horas que os alunos passam estudando influencia a pontuação no teste final**.
+
+Para responder isso, o projeto treina um algoritmo de **regressão linear simples** que prevê a pontuação do teste a partir das horas de estudo. O fluxo completo vai do carregamento dos dados até a disponibilização do modelo em uma **API** que outras aplicações podem consumir.
+
 ## 🎯 Objetivo
 
-Responder à pergunta: *quanto a quantidade de horas estudadas influencia a nota obtida?*
-O modelo aprende a relação linear entre as duas variáveis:
+- Avaliar se existe relação entre horas de estudo e pontuação no teste final.
+- Treinar e validar um modelo capaz de prever a pontuação de um aluno.
+- Salvar o modelo treinado e expô-lo por meio de uma API.
+
+## 📐 Como funciona a regressão linear simples
+
+A regressão linear simples usa a **equação da reta** para prever uma variável dependente (`y`) a partir de uma variável independente (`x`):
 
 ```
 pontuacao_teste = β0 + β1 · horas_estudo
 ```
+
+- **β0 (intercepto):** ponto onde a reta cruza o eixo Y, ou seja, a pontuação prevista para 0 horas de estudo.
+- **β1 (coeficiente):** inclinação da reta, que diz quantos pontos a nota aumenta a cada hora a mais de estudo.
+
+O algoritmo busca a reta que **minimiza os erros** entre os valores reais e os previstos, usando o **método dos mínimos quadrados** (*Ordinary Least Squares*).
 
 ## 📊 Dataset
 
@@ -24,11 +40,12 @@ Arquivo: [`datasets/pontuacao_teste.csv`](datasets/pontuacao_teste.csv) — 100 
 
 ## 🧠 Etapas do projeto
 
-- [ ] Análise exploratória dos dados (EDA)
-- [ ] Análise de correlação
-- [ ] Treinamento do modelo de Regressão Linear
-- [ ] Avaliação (R², MAE, RMSE) e análise de resíduos
-- [ ] Disponibilização do modelo via API (FastAPI)
+- [ ] Carregamento dos dados em um DataFrame do Pandas
+- [ ] Análise exploratória dos dados (EDA) e correlação
+- [ ] Treinamento do modelo de regressão linear
+- [ ] Validação do modelo (R², MAE, RMSE e análise de resíduos)
+- [ ] Salvamento do modelo treinado
+- [ ] Criação da API com FastAPI para servir as previsões
 
 ## 🛠️ Tecnologias
 
